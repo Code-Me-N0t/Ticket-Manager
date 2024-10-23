@@ -140,8 +140,8 @@ class JiraLoggerApp:
             messagebox.showerror("Error", "JQL query cannot be empty.")
             return
         try:
-            issues = self.jira_api.search_jira(jql_query)  # Issues are returned as a list of strings
-            self.display_search_results(issues)  # Call a new function to display the search results
+            issues = self.jira_api.search_jira(jql_query)
+            self.display_search_results(issues)
         except Exception as e:
             messagebox.showerror("Error", str(e))
 
@@ -160,8 +160,8 @@ class JiraLoggerApp:
         search_entry.pack(fill=tk.X, padx=10, pady=5)
         
         # Style the Entry widget to be flat
-        style = ttk.Style()
-        style.configure("TEntry", relief="flat", borderwidth=0, background=self.color.secondary_bg, foreground=self.color.quaternary_fg, padding=5)
+        entry_style = ttk.Style()
+        entry_style.configure("TEntry", relief='flat', borderwidth=0, background=self.color.secondary_bg, foreground=self.color.quaternary_fg, padding=5)
         search_entry.configure(style="TEntry")
 
         total_results_label = tk.Label(results_window, text=f"Total Results: {len(issues)}", bg=self.color.primary_bg, fg="#A39BBA")
@@ -177,8 +177,6 @@ class JiraLoggerApp:
         def update_total_results(count):
             total_results_label.config(text=f'Total Results: {count}')
 
-
-        # Filtering function for the search bar
         def filter_results(event):
             search_term = search_entry.get().lower()
             results_listbox.delete(0, tk.END)
