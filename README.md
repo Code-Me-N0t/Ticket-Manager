@@ -1,5 +1,5 @@
-<h1>Jira Logger App</h1>
-I created a simple lighweight and user-friendly Jira Logger App designed to interact using JIRA API.
+<h1>Ticket Manager</h1>
+I created a simple lighweight and user-friendly Ticket Manager designed to interact using JIRA API.
 <br>
 <h2>FEATURES</h2>
 <p><b>• JQL Search:</b> Enter JQL queries to search for issues in JIRA.</p>
